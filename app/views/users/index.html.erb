@@ -1,0 +1,117 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'New User', new_user_path %>
+
+<table id="reportTable"></table>
+
+<script type="text/javascript" charset="utf-8">
+  var ColumnsData = new Array();
+
+  <% @users.each_with_index do |user, index| %>
+  ColumnsData.push({
+    index: '<%= index+1 %>',
+    name: '<%= user.name %>',
+    email: '<%= user.email %>',
+    password: '<%= user.password %>',
+    string: '<%= user.string %>',
+    role: '<%= user.role %>',
+    createdAt: '<%= user.created_at %>',
+    operate: '<%= link_to content_tag(:i, '', :class=>'glyphicon glyphicon-eye-open', :style=>'color:#1ABC9C;'), user, :class=>'operate-icon' %>' +
+    ' <%= link_to content_tag(:i, '', :class=>'glyphicon glyphicon-pencil', :style=>'color:#3498DB;'), edit_user_path(user), :class=>'operate-icon' %>' +
+    ' <%= link_to content_tag(:i, '', :class=>'glyphicon glyphicon-trash', :style=>'color:#E74C3C;'), user, method: :delete, data: {confirm: 'Are you sure?'}, :class=>'operate-icon' %>'
+  });
+  <% end %>
+
+  var height = $(window).height() - 130;
+
+  $('#reportTable').bootstrapTable({
+    method: 'get',
+    cache: true,
+    height: height,
+    striped: true,
+    pagination: true,
+    pageSize: 50,
+    pageNumber: 1,
+    pageList: [50],
+    search: true,
+    searchAlign: 'left',
+    searchPlaceholder: ' name or email',
+    showColumns: true,
+    showRefresh: false,
+    showExport: true,
+    exportTypes: ['csv', 'excel', 'pdf'],
+    clickToSelect: true,
+    columns: [{
+      field: "index",
+      title: "index",
+      align: "center",
+      valign: "middle",
+      sortable: "true"
+    }, {
+      field: "name",
+      title: "name",
+      align: "center",
+      valign: "middle",
+      sortable: "true",
+      searchable: "true "
+    }, {
+      field: "email",
+      title: "email",
+      align: "center",
+      valign: "middle",
+      sortable: "true",
+      searchable: "true "
+    }, {
+      field: "password",
+      title: "nickname",
+      align: "center",
+      valign: "middle",
+      sortable: "true"
+    }, {
+      field: "string",
+      title: "string",
+      align: "center",
+      valign: "middle",
+      sortable: "true"
+    }, {
+      field: "role",
+      title: "role",
+      align: "center",
+      valign: "middle",
+      sortable: "true"
+    }, {
+      field: "createdAt",
+      title: "createdAt",
+      align: "center",
+      valign: "middle",
+      sortable: "true"
+    }, {
+      field: "operate",
+      title: "options",
+      align: "center",
+      valign: "middle"
+    }],
+    data: ColumnsData,
+    onPageChange: function (size, number) {
+      //$("#pageSizeInput").val(size);
+      //$("#pageNumberInput").val(number);
+
+      //var form = $('#tableForm');
+      //form.action= '${base}/showReport';
+      //form.submit();
+    },
+    //onSort: function (name, order) {
+    // },
+    //formatShowingRows: function (pageFrom, pageTo, totalRows) {
+    //	return '';
+    // },
+    //formatRecordsPerPage: function () {
+    //	return '';
+    //  },
+    formatNoMatches: function () {
+      return 'Nothing to Show';
+    }
+  });
+
+  $('.dropdown-toggle').dropdown();
+</script>

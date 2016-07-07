@@ -1,0 +1,357 @@
+<p id="notice"><%= notice %></p>
+
+<style type="text/css">
+  body {
+    background: #f5f5f5;
+  }
+
+  .improve-rectangle, .complete-rectangle {
+    border-radius: 5px;
+    width: 280px;
+    height: 200px;
+    background: white;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+  }
+
+  .complete-rectangle {
+    width: 200px;
+    height: 140px;
+    opacity: .8;
+  }
+
+  .complete-icon {
+    height: 60px;
+    line-height: 60px;
+    font-size: 3em;
+    text-align: center;
+    cursor: pointer;
+    color: #34495E;
+  }
+
+  .complete-font {
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+  }
+
+  .improve-font {
+    height: 100px;
+    cursor: pointer;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .improve-name {
+    line-height: 70px;
+    font-size: 1.8em;
+  }
+
+  .improve-desc {
+    padding-left: 20px;
+  }
+
+  .improve-icon {
+    font-size: 2em;
+    text-align: center;
+    display: flex;
+  }
+
+  .improve-lock-icon, .improve-edit-icon {
+    width: 50%;
+    cursor: pointer;
+  }
+
+  .improve-lock-icon {
+    color: #16A085;
+  }
+
+  .improve-lock-icon:hover {
+    color: #1ABC9C;
+  }
+
+  .improve-edit-icon {
+    color: #2980B9;
+  }
+
+  .improve-edit-icon:hover {
+    color: #3498DB;
+  }
+
+  .improve-collapse:hover, .improve-collapse:active {
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: #f3f3f3;
+    color: black;
+    outline: none;
+  }
+
+  .finish-ribbon {
+    background-color: #a00;
+    overflow: hidden;
+    white-space: nowrap;
+    position: fixed;
+    top: 10px;
+    right: -20px;
+    transform: rotate(45deg);
+    -webkit-box-shadow: 0 0 10px #888;
+    -moz-box-shadow: 0 0 10px #888;
+    box-shadow: 0 0 10px #888;
+    z-index: 999;
+  }
+
+  .finish-ribbon > span {
+    border: 1px solid #faa;
+    color: #fff;
+    display: block;
+    margin: 1px 0;
+    padding: 2px 22px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 0 5px #444;
+  }
+
+</style>
+
+<div id="accordion" role="tablist" aria-multiselectable="true">
+  <blockquote>
+    <h4 role="tab" id="improvePanel">
+      <a role="button" class="improve-collapse hvr-bounce-in" href="#improveCollapse" data-toggle="collapse"
+         data-parent="#accordion" aria-expanded="true" aria-controls="improveCollapse">
+        <i class="glyphicon glyphicon-chevron-down"></i>
+      </a>
+      &nbsp;
+      我的待改善项目
+    </h4>
+  </blockquote>
+
+  <div class="container panel-collapse collapse in" id="improveCollapse" role="tabpanel" aria-labelledby="improvePanel">
+    <div class="col-md-4">
+      <!-- declear improve  -->
+      <div class="improve-rectangle">
+        <!-- font show -->
+        <div class="improve-font">
+          <div class="improve-name" title="Polo 爬坡项目" data-toggle="tooltip">
+            Polo 爬坡项目
+          </div>
+          <div class="improve-desc" title="Polo爬坡项目描述" data-toggle="tooltip">
+            Polo爬坡项目描述
+          </div>
+        </div>
+        <hr style="margin-top: 10px;"/>
+        <!-- icon show -->
+        <div class="improve-icon">
+          <div class="improve-lock-icon">
+            <i class="glyphicon glyphicon-lock" title="Lock Project" data-toggle="tooltip"></i>
+          </div>
+
+          <div class="improve-edit-icon">
+            <i class="glyphicon glyphicon-pencil edit-improve" title="Edit Project Info" data-toggle="tooltip"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <!-- declear improve  -->
+      <div class="improve-rectangle">
+        <!-- font show -->
+        <div class="improve-font">
+          <div class="improve-name" title="Polo 仓库移动项目" data-toggle="tooltip">
+            Polo 仓库移动项目
+          </div>
+          <div class="improve-desc" title="Polo仓库移动项目描述" data-toggle="tooltip">
+            Polo仓库移动项目描述
+          </div>
+        </div>
+        <hr style="margin-top: 10px;"/>
+        <!-- icon show -->
+        <div class="improve-icon">
+          <div class="improve-lock-icon">
+            <i class="glyphicon glyphicon-lock" title="Lock Project" data-toggle="tooltip"></i>
+          </div>
+
+          <div class="improve-edit-icon">
+            <i class="glyphicon glyphicon-pencil edit-improve" title="Edit Project Info" data-toggle="tooltip"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <!-- declear improve  -->
+      <div class="improve-rectangle">
+        <!-- font show -->
+        <div class="improve-font">
+          <div class="improve-name" title="仓库盘点项目" data-toggle="tooltip">
+            仓库盘点项目
+          </div>
+          <div class="improve-desc" title="仓库盘点项目描述" data-toggle="tooltip">
+            仓库盘点项目描述
+          </div>
+        </div>
+        <hr style="margin-top: 10px;"/>
+        <!-- icon show -->
+        <div class="improve-icon">
+          <div class="improve-lock-icon">
+            <i class="glyphicon glyphicon-lock" title="Lock Project" data-toggle="tooltip"></i>
+          </div>
+
+          <div class="improve-edit-icon">
+            <i class="glyphicon glyphicon-pencil edit-improve" title="Edit Project Info" data-toggle="tooltip"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--add improve-->
+    <div class="col-md-4">
+      <div class="improve-rectangle">
+        <div class="improve-font hvr-bounce-in">
+          <i class="glyphicon glyphicon-plus" style="font-size: 4em;color: #34495E;margin-top:20px;"></i>
+        </div>
+        <hr style="margin-top: 10px;">
+        <div>
+          新增项目
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <blockquote>
+    <h4 role="tab" id="completePanel">
+      <a role="button" class="improve-collapse hvr-bounce-in" href="#completeCollapse" data-toggle="collapse"
+         data-parent="#accordion" aria-expanded="false" aria-controls="completePanel">
+        <i class="glyphicon glyphicon-chevron-down"></i>
+      </a>
+      &nbsp;
+      已完成项目
+    </h4>
+  </blockquote>
+
+  <div class="container panel-collapse collapse" id="completeCollapse" role="tabpanel" aria-labelledby="completePanel">
+    <div class="col-md-3">
+      <div class="complete-rectangle hvr-overline-from-center">
+        <div class="finish-ribbon">
+          <span>已完成</span>
+        </div>
+        <!-- icon show -->
+        <div class="complete-icon hvr-bounce-in" id="2016001" title="打开项目" data-toggle="tooltip" data-placement="bottom">
+          <i class="glyphicon glyphicon-lock"></i>
+        </div>
+        <hr style="margin:10px;">
+        <!--font show-->
+        <div class="complete-font" title="IE 工程项目" data-toggle="tooltip">
+          IE 工程项目
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="complete-rectangle hvr-overline-from-center">
+        <div class="finish-ribbon">
+          <span>已完成</span>
+        </div>
+        <!-- icon show -->
+        <div class="complete-icon hvr-bounce-in" id="2016002" title="打开项目" data-toggle="tooltip" data-placement="bottom">
+          <i class="glyphicon glyphicon-lock"></i>
+        </div>
+        <hr style="margin:10px;">
+        <!--font show-->
+        <div class="complete-font" title="IE 工程项目" data-toggle="tooltip">
+          IE 工程项目
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="complete-rectangle hvr-overline-from-center">
+        <div class="finish-ribbon">
+          <span>已完成</span>
+        </div>
+        <!-- icon show -->
+        <div class="complete-icon hvr-bounce-in" id="2016003" title="打开项目" data-toggle="tooltip" data-placement="bottom">
+          <i class="glyphicon glyphicon-lock"></i>
+        </div>
+        <hr style="margin:10px;">
+        <!--font show-->
+        <div class="complete-font" title="IE 工程项目" data-toggle="tooltip">
+          IE 工程项目
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-12">
+      <footer class="pull-right">
+        <button class="btn-more-finish btn-flat-primary">查看更多已完成项目</button>
+      </footer>
+    </div>
+  </div>
+</div>
+
+<!--For improve edit-->
+<div style="display:none">
+  <div id="project_content">
+    <div class="popModal_content">
+      <input id="edit_project_name" type="text" class="form-control" placeholder="improve name" value="">
+      <textarea id="edit_project_des" style="margin-top: 10px; resize: none;" class="form-control" placeholder="Project Description"></textarea>
+    </div>
+
+    <div class="popModal_footer">
+      <button type="button" class="btn-more-finish btn-flat-primary" data-popModalBut="ok">Finish</button>
+      <!--<button type="button" class="btn btn-primary" data-popModalBut="cancel">Cancel</button>-->
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+  $('.improve-collapse').click(function () {
+    var Class = $(this).children().attr('class');
+    if (Class == "glyphicon glyphicon-chevron-down") {
+      $(this).children().attr('class', 'glyphicon glyphicon-chevron-up')
+    } else if (Class == "glyphicon glyphicon-chevron-up") {
+      $(this).children().attr('class', 'glyphicon glyphicon-chevron-down')
+    } else {
+      $(this).children().attr('class', 'glyphicon glyphicon-chevron-down')
+    }
+    console.log(Class);
+  });
+
+  $('.edit-improve').click(function () {
+    var Font = $(this).parent().parent().parent().find('.improve-name').html().trim();
+    $(this).popModal({
+      html: $('#project_content').html(),
+      placement: 'rightCenter',
+      showCloseBut: false,
+      onDocumentClickClose: true,
+      onOkBut: function () {
+        var project_name = $('#edit_project_name').val();
+        var project_des = $('#edit_project_des').val();
+        console.log(project_name);
+        console.log(project_des);
+        // post pjax?
+      },
+      onCancelBut: function () {
+      },
+      onLoad: function () {
+        $('#edit_project_name').val(Font);
+      },
+      onClose: function () {
+      }
+    });
+  });
+
+  $('.complete-icon').click(function () {
+    alert($(this).attr('id'));
+  });
+
+  $('.btn-more-finish').click(function () {
+    alert("Get More");
+  });
+</script>
