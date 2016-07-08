@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project name:</strong>
+  <%= @create_project.project_name %>
+</p>
+
+<p>
+  <strong>Project description:</strong>
+  <%= @create_project.project_description %>
+</p>
+
+<p>
+  <strong>Plan:</strong>
+  <%= @create_project.plan_id %>
+</p>
+
+<p>
+  <strong>Invite people:</strong>
+  <%= @create_project.invite_people %>
+</p>
+
+<p>
+  <strong>Ie structue:</strong>
+  <%= @create_project.ie_structue_id %>
+</p>
+
+<p>
+  <strong>Target:</strong>
+  <%= @create_project.target_id %>
+</p>
+
+<%= link_to 'Edit', edit_create_project_path(@create_project) %> |
+<%= link_to 'Back', create_projects_path %>

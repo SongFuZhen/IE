@@ -1,3 +1,118 @@
 // Place all the styles related to the Homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background: #f5f5f5;
+}
+
+.improve-rectangle, .complete-rectangle {
+  border-radius: 5px;
+  width: 90%;
+  height: 200px;
+  background: white;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+}
+
+.complete-rectangle {
+  width: 90%;
+  height: 140px;
+  opacity: .8;
+}
+
+.complete-icon {
+  height: 60px;
+  line-height: 60px;
+  font-size: 3em;
+  text-align: center;
+  cursor: pointer;
+  color: #34495E;
+}
+
+.complete-font {
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.improve-font {
+  height: 100px;
+  cursor: pointer;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.improve-name {
+  line-height: 70px;
+  font-size: 1.8em;
+}
+
+.improve-desc {
+  padding-left: 20px;
+}
+
+.improve-icon {
+  font-size: 2em;
+  text-align: center;
+  display: flex;
+}
+
+.improve-lock-icon, .improve-edit-icon {
+  width: 50%;
+  cursor: pointer;
+}
+
+.improve-lock-icon {
+  color: #16A085;
+}
+
+.improve-lock-icon:hover {
+  color: #1ABC9C;
+}
+
+.improve-edit-icon {
+  color: #2980B9;
+}
+
+.improve-edit-icon:hover {
+  color: #3498DB;
+}
+
+.improve-collapse:hover, .improve-collapse:active {
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: #f3f3f3;
+  color: black;
+  outline: none;
+}
+
+.finish-ribbon {
+  background-color: #a00;
+  overflow: hidden;
+  white-space: nowrap;
+  position: fixed;
+  top: 10px;
+  right: -20px;
+  transform: rotate(45deg);
+  -webkit-box-shadow: 0 0 10px #888;
+  -moz-box-shadow: 0 0 10px #888;
+  box-shadow: 0 0 10px #888;
+  z-index: 999;
+}
+
+.finish-ribbon > span {
+  border: 1px solid #faa;
+  color: #fff;
+  display: block;
+  margin: 1px 0;
+  padding: 2px 22px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 0 5px #444;
+}

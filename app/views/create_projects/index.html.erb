@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Create Projects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Project name</th>
+      <th>Project description</th>
+      <th>Plan</th>
+      <th>Invite people</th>
+      <th>Ie structue</th>
+      <th>Target</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @create_projects.each do |create_project| %>
+      <tr>
+        <td><%= create_project.project_name %></td>
+        <td><%= create_project.project_description %></td>
+        <td><%= create_project.plan_id %></td>
+        <td><%= create_project.invite_people %></td>
+        <td><%= create_project.ie_structue_id %></td>
+        <td><%= create_project.target_id %></td>
+        <td><%= link_to 'Show', create_project %></td>
+        <td><%= link_to 'Edit', edit_create_project_path(create_project) %></td>
+        <td><%= link_to 'Destroy', create_project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Create Project', new_create_project_path %>

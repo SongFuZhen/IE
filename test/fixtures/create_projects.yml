@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project_name: MyString
+  project_description: MyText
+  plan_id: 
+  invite_people: 
+  ie_structue_id: 
+  target_id: MyString
+
+two:
+  project_name: MyString
+  project_description: MyText
+  plan_id: 
+  invite_people: 
+  ie_structue_id: 
+  target_id: MyString
