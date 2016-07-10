@@ -1,37 +1,165 @@
 <p id="notice"><%= notice %></p>
+<style>
+  a:hover, a:active {
+    text-decoration: none;
+    outline: none;
+    color: black;
+    background-color: #efefef;
+  }
 
-<h1>Create Projects</h1>
+  .project_stepy {
+    text-align: center;
+    margin-top: -10px;
+  }
 
-<table>
-  <thead>
-    <tr>
-      <th>Project name</th>
-      <th>Project description</th>
-      <th>Plan</th>
-      <th>Invite people</th>
-      <th>Ie structue</th>
-      <th>Target</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  .step_content {
+    position: absolute;
+    top: 120px;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    background: white;
+  }
 
-  <tbody>
-    <% @create_projects.each do |create_project| %>
-      <tr>
-        <td><%= create_project.project_name %></td>
-        <td><%= create_project.project_description %></td>
-        <td><%= create_project.plan_id %></td>
-        <td><%= create_project.invite_people %></td>
-        <td><%= create_project.ie_structue_id %></td>
-        <td><%= create_project.target_id %></td>
-        <td><%= link_to 'Show', create_project %></td>
-        <td><%= link_to 'Edit', edit_create_project_path(create_project) %></td>
-        <td><%= link_to 'Destroy', create_project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  .project-font {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: right;
+    margin-top: 8px;
+  }
 
-<br>
+  .footer {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+  }
+</style>
 
-<%= link_to 'New Create Project', new_create_project_path %>
+<div class="project_stepy"></div>
+
+<div>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist" id="project_content" style="display: none;">
+    <li role="presentation" class="active"><a href="#basic" aria-controls="basic" role="tab" data-toggle="tab">Basic</a>
+    </li>
+    <li role="presentation"><a href="#plan" aria-controls="plan" role="tab" data-toggle="tab">Plan</a></li>
+    <li role="presentation">
+      <a href="#invite_people" aria-controls="invite_people" role="tab" data-toggle="tab">Invite People</a></li>
+
+    <li role="presentation">
+      <a href="#ie_structure" aria-controls="ie_structure" role="tab" data-toggle="tab">IE Structure</a>
+    </li>
+
+    <li role="presentation">
+      <a href="#kpi_setting" aria-controls="kpi_setting" role="tab" data-toggle="tab"> KPI Setting</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active step_content" id="basic">
+      <!--Here is project basic info-->
+      <div class="container" style="padding: 20px;">
+        <div class="row">
+          <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 project-font">
+            Project Name
+          </div>
+          <div class="col-lg-10 col-md-9 col-sm-8 col-xs-6 ">
+            <input type="text" class="form-control">
+          </div>
+        </div>
+        
+        <div class="row" style="margin-top: 50px;">
+          <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 project-font">
+            Description
+          </div>
+          <div class="col-lg-10 col-md-9 col-sm-8 col-xs-6">
+            <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane step_content" id="plan">
+      this is
+      plan
+    </div>
+    <div role="tabpanel" class="tab-pane step_content" id="invite_people">
+      this is invite people
+    </div>
+    <div role="tabpanel" class="tab-pane step_content" id="ie_structure">
+      this is ie Structure
+    </div>
+
+    <div role="tabpanel" class="tab-pane step_content" id="kpi_setting">
+      this is ie KPI Setting
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <button class="btn-flat-warning btn-previous">
+    Previous
+  </button>
+
+  <button class="btn-flat-primary btn-next">
+    Next
+  </button>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+  $(".project_stepy").loadStep({
+    size: "large",
+    color: "green",
+    steps: [{
+      title: "Basic",
+      content: "Project Basic Info"
+    }, {
+      title: "Plan",
+      content: "Project Plan"
+    }, {
+      title: "Invite People",
+      content: "You can Invite people for your project"
+    }, {
+      title: "IE Structure",
+      content: "IE Structure"
+    }, {
+      title: "KPI Setting",
+      content: "Set KPI Target"
+    }]
+  });
+
+  $('.btn-previous').click(function () {
+    var nowStep = $('.project_stepy').getStep();
+    nowStep--;
+    select_content(nowStep);
+  });
+
+  $('.btn-next').click(function () {
+    var nowStep = $('.project_stepy').getStep();
+    nowStep++;
+    select_content(nowStep);
+  });
+
+  function select_content(i) {
+    $('.project_stepy').setStep(i);
+    if (i == 1) {
+      click_tabs("project_content", "basic");
+    } else if (i == 2) {
+      click_tabs("project_content", "plan");
+    } else if (i == 3) {
+      click_tabs("project_content", "invite_people");
+    } else if (i == 4) {
+      click_tabs("project_content", "ie_structure");
+    } else if (i == 5) {
+      click_tabs("project_content", "kpi_setting");
+    } else {
+      i = 1;
+    }
+  }
+
+  function click_tabs(project_id, content_id) {
+    $('#' + project_id + ' a[href="#' + content_id + '"]').tab('show');
+  }
+</script>
+
+<!--<%= link_to 'New Create Project', new_create_project_path %>-->
